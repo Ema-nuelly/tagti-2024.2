@@ -40,6 +40,15 @@ def cardapio():
     ]
     return render_template("cardapio.html", pizzas=pizzas)
 
+@app.route('/avaliacoes')
+def avaliacoes():
+    aval = [
+        {
+           "usuario": "Carla",
+           "estrelas": 4
+        }
+    ]
+    return render_template("avaliacoes.html", aval=aval)
 
 if __name__ == '__main__':
     app.run()

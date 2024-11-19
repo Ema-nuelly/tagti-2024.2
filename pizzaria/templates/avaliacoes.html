@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+<h1>Avaliações</h1>
+<ul>
+    {% for aval in avaliacoes %}
+        <li>{{ aval.usuario }} <br> {{ aval.estrelas }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
