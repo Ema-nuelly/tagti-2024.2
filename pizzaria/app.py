@@ -57,8 +57,7 @@ def avaliacoes():
         {
             "usuario": "Tomás",
             "estrelas": 1
-        },
-
+        }
     ]
     return render_template("avaliacoes.html", aval=aval)
 
