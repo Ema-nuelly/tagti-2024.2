@@ -49,7 +49,16 @@ def avaliacoes():
         {
            "usuario": "Carla",
            "estrelas": 4
-        }
+        },
+        {
+            "usuario": "Severina",
+            "estrelas": 3
+        },
+        {
+            "usuario": "Tomás",
+            "estrelas": 1
+        },
+
     ]
     return render_template("avaliacoes.html", aval=aval)
 
