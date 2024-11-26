@@ -45,21 +45,43 @@ def cardapio():
 
 @app.route('/avaliacoes')
 def avaliacoes():
-    aval = [
+    avaliacoes = [
         {
            "usuario": "Carla",
            "estrelas": 4
         },
         {
-            "usuario": "Severina",
-            "estrelas": 3
+            "usuario": "Eliéser",
+            "estrelas": 5
         },
         {
-            "usuario": "Tomás",
+            "usuario": "Severina",
             "estrelas": 1
         }
     ]
-    return render_template("avaliacoes.html", aval=aval)
+    return render_template("avaliacoes.html", avaliacoes=avaliacoes)
+
+@app.route('/faleconosco', methods=['GET', 'POST'])
+def faleconosco():
+    if request.method == 'POST':
+        nome = request.form["nome"]
+        email = request.form["email"]
+        mensagem = request.form["msg"]
+        return f"Nome: {nome}, E-mail: {email}, Mensagem: {mensagem}"
+    else:
+        render_template('fale.html')
+
+    return render_template("fale.html")
+
+@app.route('/login', methods=['GET','POST'])
+def login():
+    if request.method == 'POST':
+        usuario = request.form["usuario"]
+        email = request.form["email"]
+        return f"Usuário: {usuario}; E-mail: {email}"
+    else:
+        return render_template('login.html')
+
 
 if __name__ == '__main__':
     app.run()
